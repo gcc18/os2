@@ -1,13 +1,10 @@
-YOCTO_IMAGE=$1
+#!bin/bash
 
-e2fsck -f YOCTO_IMAGE
-resize2fs YOCTO_IMAGE 64M
 
-TMP=$(mktemp -d)
+TMP=$(mktemp -u)
+sudo mount -t ext4 -o loop $1 $TMP
 
-mount -t ext4 -o loop $YOCTO_IMAGE $TMP
+cp -r labs $TMP/home/labs
 
-cp ../labs $TMP/home/labs
-
-unmount $TMP
+sudo unmount $TMP
 rmdir $TMP
