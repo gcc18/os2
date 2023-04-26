@@ -1,10 +1,9 @@
 #!bin/bash
 
-
 TMP=$(mktemp -u)
-sudo mount -t ext4 -o loop $1 $TMP
+mount -t ext4 -o loop yocto-image.ext4 $TMP
 
 cp -r labs $TMP/home/labs
 
-sudo unmount $TMP
+unmount $TMP
 rmdir $TMP
