@@ -1,4 +1,4 @@
-CONFIG ?= ./kernel/kernel_config.x86
+CONFIG ?= kernel_config.x86
 
 KURL = https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/snapshot/linux-$(TAG).tar.gz
 
@@ -9,8 +9,8 @@ ZIMAGE = $(KDIR)/arch/$(ARCH)/boot/bzImage
 KIMAGE = ../bzImage
 
 $(KDIR):
-	wget -N -P kernel $(KURL) 
-	tar -xvzf kernel/linux-$(TAG).tar.gz -C kernel
+	wget -N  $(KURL) 
+	tar -xvzf linux-$(TAG).tar.gz 
 
 $(KCONFIG):  $(KDIR)
 	cp $(CONFIG) $(KDIR)/.config
