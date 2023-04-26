@@ -18,7 +18,7 @@ $(KDIR):
 	wget $(KURL)
 	tar -xvzf linux-$(TAG).tar.gz
 
-$(KCONFIG): $(CONFIG)
+$(KCONFIG): $(CONFIG) $(KDIR)
 	cp $(CONFIG) $(KDIR)/.config
 	$(MAKE) -C $(KDIR) olddefconfig
 	$(MAKE) -C $(KDIR) mod2yesconfig
