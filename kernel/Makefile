@@ -6,7 +6,7 @@ KCONFIG = $(KDIR)/.config
 
 ZIMAGE = $(KDIR)/arch/$(ARCH)/boot/bzImage
 
-KIMAGE = ../bzImage
+
 
 $(KDIR):
 	wget -N  $(KURL) 
