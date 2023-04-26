@@ -1,0 +1,5 @@
+EXTRA_CFLAGS = -Wall -g
+
+ccflags-y = -Wno-unused-function -Wno-unused-label -Wno-unused-variable -DDEBUG
+
+obj-m        = modul.o
