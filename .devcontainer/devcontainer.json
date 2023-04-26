@@ -4,4 +4,5 @@
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
       "packages": "util-linux,build-essential,bison,flex,libssl-dev,libelf-dev,bc,initramfs-tools-core"
     }
+  }
 }
